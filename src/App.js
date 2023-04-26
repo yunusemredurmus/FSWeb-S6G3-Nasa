@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
-
+import Datas from "./data";
 function App() {
   return (
     <div className="App">
+      <div>
+        <Datas/>
+      </div>
+
       <p>
-        NASA uygulamasını yapmak için README.md dosyasıdaki talimatları takip edin
-		İyi eğlenceler! <span role="img" aria-label='go!'>🚀</span>!
+       
       </p>
     </div>
   );
