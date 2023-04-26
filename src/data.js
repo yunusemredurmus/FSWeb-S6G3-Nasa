@@ -5,12 +5,13 @@ import "./data.css"
 
 
 function Datas() {
-  const [arama, setArama] = useState("");
+  const [arama, setArama] = useState(Date);
   const [data, setData] = useState({});
-  useEffect(() => axios.get("https://api.nasa.gov/planetary/apod?api_key=QglRB5v9ljxlUbvEH06zVrqd9wQBMKU2xwunYzn2")
-    .then(res => setData(res.data))
-    .catch(err => console.log(err))
-    , [arama]);
+  useEffect(() => {
+    axios.get(`https://api.nasa.gov/planetary/apod?api_key=V5NbdIolfEEpLwqGgrGoqWDxVGI1a7if27rIzmVZ&date=${arama}`)
+      .then(res => setData(res.data))
+      .catch(err => console.log(err))
+  }, [data, arama]);
 
   return (
     <div className="bar">
